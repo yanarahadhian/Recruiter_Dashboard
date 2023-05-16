@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Resource Recruitment</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <!--====== Animate CSS ======-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="assets/css/LineIcons.css">
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="assets/css/default.css">
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--====== flickity CSS ======-->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.7/firebase-app.js"></script>
+</head>
+
+<body> 
+    <!--====== PRELOADER PART START ======-->
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== PRELOADER PART ENDS ======-->
+    
+    <!--====== HEADER PART START ======-->
+    <header class="header-area">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="./index.html">
+                                <img src="assets/images/logo-netflix.svg" alt="Logo">
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ml-auto">
+                                    <li class="nav-item active">
+                                        <a class="page-scroll" href="#home">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#frequently">Frequently</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#recently">Recently</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#feedback">Feedback</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#contact-us">Contact Us</a>
+                                    </li>
+                                    <li class="nav-border"></li>
+                                    <li class="nav-item dropdown" id="candidate">
+                                        <a class="nav-link" href="#" data-bs-toggle="dropdown">Candidates</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="./search_employees_en.html">Search Candidate</a></li>
+                                            <li><a class="dropdown-item" href="./form_employees_en.html">Post your CV</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown" id="job">
+                                        <a class="nav-link" href="#" data-bs-toggle="dropdown">Jobs</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="./search_employment_en.html">Search Job</a></li>
+                                            <li><a class="dropdown-item" href="./form_employment_en.html">Post Job</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item" id="signIn">
+                                        <a href="./login.html">Login</a>
+                                    </li>
+                                    <li class="nav-item flag">
+                                        <a class="lang" href="./index_tr.html">
+                                            <img src="./assets/images/tr-flag.png" alt="TR">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="home" class="header-hero bg_cover search-index" style="background-image: url(assets/images/banner-bg.jpg); height: 585px;"">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="section-title header-white-title text-center pb-100">
+                            <h3 class="title">Find Jobs or Candidates, <span> With everything you need to get!</span></h3>
+                        </div>
+                    </div>
+                </div>
+                <form>
+                    <div class="row justify-content-center">
+                        <div class="input-group search-index-form">
+                            <div class="search-field">
+                                <select class="form-control" id="search-option">
+                                    <option>I'm looking for Job</option>
+                                    <option>I'm looking for Candidate</option>
+                                </select>
+                            </div>
+                            <div class="search-field">
+                                <input id="search-keywords" type="text" placeholder="Keywords" class="form-control" autocomplete="off" onkeypress="handleKeyPress(event)">
+                            </div>
+                            <div class="search-button">
+                                <div class="input-group-append">
+                                    <a class="main-btn" href="#" role="button" onclick="indexSearch()">
+                                        <span>Search</span>                                    
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+    <!--====== HEADER PART ENDS ======-->
+
+    <!--====== Most View Job Slider PART START ======-->
+    <section id="mostViewJob" class="mostViewJob-area pb-120">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="section-title text-center pb-40">
+                        <div class="line m-auto"></div>
+                        <h3 class="title">Most Viewed jobs, <span> Comes with everything you need to get started!</span></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="mostViewJob-slider wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.8s"></div>
+        </div>
+    </section>
+    <!--====== Most View Job Slider PART ENDS ======-->
+
+    <!--====== Adsense PART START ======-->
+    <div id="adsWrap" class="wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s" style="top:-70px">
+        <div class="contentWrapper">
+            <button type="button" class="wrpClose" onclick="this.parentNode.parentNode.style.display = 'none';">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            adsense section
+        </div>
+    </div>
+    <!--====== Adsense PART ENDS ======-->
+    
+    <!--====== Frequently PART START ======-->
+    <section id="frequently" class="services-area pb-120">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="section-title text-center pb-40">
+                        <div class="line m-auto"></div>
+                        <h3 class="title">Frequently posted jobs, <span> Comes with everything you need to get started!</span></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="frequently-searched-list">
+            </div>
+        </div>
+    </section>
+    <!--====== Frequently PART ENDS ======-->
+
+    <!--====== Adsense PART START ======-->
+    <div id="adsWrap" class="wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s" style="top:-70px">
+        <div class="contentWrapper">
+            <button type="button" class="wrpClose" onclick="this.parentNode.parentNode.style.display = 'none';">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            adsense section
+        </div>
+    </div>
+    <!--====== Adsense PART ENDS ======-->
+    
+    <!--====== RECENTLY PART START ======-->
+    <section id="recently" class="recently-area pb-120">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="recently-content mt-50 wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div class="section-title">
+                            <div class="line"></div>
+                            <h3 class="title">Most recently added jobs, <span>Comes with everything you need to get started!</span></h3>
+                        </div>
+                        <p class="text">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, seiam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing.</p>
+                        <a href="./search_employment_en.html" class="main-btn mt-20">See More <i class="lni-chevron-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="recently-list text-center mt-50 wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--====== RECENTLY PART ENDS ======-->
+
+    <!--====== Adsense PART START ======-->
+    <div id="adsWrap" class="wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s" style="top:-70px">
+        <div class="contentWrapper">
+            <button type="button" class="wrpClose" onclick="this.parentNode.parentNode.style.display = 'none';">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            adsense section
+        </div>
+    </div>
+    <!--====== Adsense PART ENDS ======-->
+    
+    <!--====== FEEDBACK PART START ======-->
+    <section id="feedback" class="testimonial-area pb-120">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-5">
+                    <div class="section-title text-center pb-40">
+                        <div class="line m-auto"></div>
+                        <h3 class="title">Users sharing<span> their experience</span></h3>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-slider wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.8s"></div>
+        </div>
+    </section>
+    <!--====== FEEDBACK PART ENDS ======-->
+
+    <!--====== Adsense PART START ======-->
+    <div id="adsWrap" class="wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s" style="top:-70px">
+        <div class="contentWrapper">
+            <button type="button" class="wrpClose" onclick="this.parentNode.parentNode.style.display = 'none';">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            adsense section
+        </div>
+    </div>
+    <!--====== Adsense PART ENDS ======-->
+
+    <!--====== sticky left Adsense PART START ======-->
+    <!-- <div id="stickyLeftAdsWrap" class="wow fadeInRightBig" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="stickyLeftcontentWrapper">
+            <button type="button" class="wrpClose" onclick="this.parentNode.parentNode.style.display = 'none';">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            adsense section
+        </div>
+    </div> -->
+    <!--====== sticky left Adsense PART ENDS ======-->
+
+    <!--====== sticky right Adsense PART START ======-->
+    <div id="stickyRightAdsWrap" class="wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="stickyRightcontentWrapper">
+            <button type="button" class="wrpClose" onclick="this.parentNode.parentNode.style.display = 'none';">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            adsense section
+        </div>
+    </div>
+    <!--====== sticky right Adsense PART ENDS ======-->
+
+    <!--====== sticky top Adsense PART START ======-->
+    <!-- <div id="stickyTopAdsWrap" class="wow fadeInDownBig" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="stickyTopcontentWrapper">
+            <button type="button" class="wrpClose" onclick="this.parentNode.parentNode.style.display = 'none';">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            adsense section
+        </div>
+    </div> -->
+    <!--====== sticky top Adsense PART ENDS ======-->
+
+    <!--====== sticky bottom Adsense PART START ======-->
+    <div id="stickyBottomAdsWrap" class="wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="stickyBottomcontentWrapper">
+            <button type="button" class="wrpClose" onclick="this.parentNode.parentNode.style.display = 'none';">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            adsense section
+        </div>
+    </div>
+    <!--====== sticky bottom Adsense PART ENDS ======-->
+
+    <!--====== FOOTER PART START ======-->
+    <footer id="contact-us" class="footer-area mt-100">
+        <div class="container">
+            <div class="footer-widget">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-8">
+                        <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                            <p class="text">Lorem ipsum dolor sit amet consetetur sadipscing elitr, sederfs diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
+                            <ul class="social">
+                                <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
+                                <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
+                                <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
+                                <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-8">
+                        <div class="footer-contact mt-50 justify-content-md-between">
+                            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                                <div class="footer-title">
+                                    <h4 class="title">Contact Us</h4>
+                                </div>
+                                <ul class="contact link">
+                                    <li><i class="lni lni-map-marker"></i> Your Company Address </br> City / Province </li>
+                                    <li><i class="lni lni-phone"></i> +01 (234) 567 8901</li>
+                                    <li><i class="lni lni-printer"></i> +01 (234) 567 8901</li>
+                                    <li><i class="lni lni-envelope"></i> info@your.company</li>
+                                    <li><i class="lni lni-world"></i> www.yourweb.com</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-8">
+                        <div class="link-wrapper wow fadeIn mt-50 justify-content-md-between" data-wow-duration="1s" data-wow-delay="0.6s">
+                            <div class="footer-title">
+                                <h4 class="title">Resources</h4>
+                            </div>
+                            <ul class="link ">
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#home">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#frequently">Frequently</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#recently">Recently</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#feedback">Feedback</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#contact-us">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-8">
+                        <div class="link-wrapper wow fadeIn mt-50 justify-content-md-between" data-wow-duration="1s" data-wow-delay="0.4s">
+                            <div class="footer-title">
+                                <h4 class="title">Quick Link</h4>
+                            </div>
+                            <ul class="link">
+                                <li class="nav-item">
+                                    <a href="./search_employees_en.html">Search Candidates</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./search_employment_en.html">Search Jobs</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright d-sm-flex justify-content-between">
+                            <div class="copyright-content">
+                                <p class="text">© 2016 All Rights Reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--====== FOOTER PART ENDS ======-->
+    
+    <!--====== BACK TOP TOP PART START ======-->
+    <a href="#" class="back-to-top"><i class="lni-chevron-up"></i></a>
+    <!--====== BACK TOP TOP PART ENDS ======-->
+
+    <!--====== feedback Modal START ======-->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+    </div>
+    <!--====== feedback Modal END ======-->
+
+    <!--====== Jquery js ======-->
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <!--====== Bootstrap js ======-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!--====== Plugins js ======-->
+    <script src="assets/js/plugins.js"></script>
+    <!--====== Scrolling Nav js ======-->
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/scrolling-nav.js"></script>
+    <!--====== wow js ======-->
+    <script src="assets/js/wow.min.js"></script>
+    <!--====== Main js ======-->
+    <script src="assets/js/main.js"></script>
+    <!--====== Counter Up js ======-->
+    <script src="assets/js/waypoints.min.js"></script>
+    <script src="assets/js/jquery.counterup.min.js"></script>
+    <!--====== flickity js ======-->
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <!--====== Index data JS ======-->
+    <script src="assets/js/page/index.js"></script>
+    
+    
+</body>
+</html>

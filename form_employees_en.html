@@ -1,0 +1,464 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Resource Recruitment</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <!--====== Animate CSS ======-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="assets/css/LineIcons.css">
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!--====== Date range picker CSS ======-->
+    <link rel="stylesheet" href="assets/css/daterangepicker.css">
+    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="assets/css/default.css">
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--====== flickity CSS ======-->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <!--====== intlTelInput CSS ======-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"/>
+</head>
+
+<body> 
+    <!--====== PRELOADER PART START ======-->
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== PRELOADER PART ENDS ======-->
+    
+    <!--====== HEADER PART START ======-->
+    <header class="header-area">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="./index.html">
+                                <img src="assets/images/logo-netflix.svg" alt="Logo">
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ml-auto">
+                                    <li class="nav-item active">
+                                        <a class="page-scroll" href="./index.html#home">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="./index.html#frequently">Frequently</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="./index.html#recently">Recently</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="./index.html#feedback">Feedback</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#contact-us">Contact Us</a>
+                                    </li>
+                                    <li class="nav-border"></li>
+                                    <li class="nav-item dropdown" id="candidate">
+                                        <a class="nav-link" href="#" data-bs-toggle="dropdown">Candidates</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="./search_employees_en.html">Search Candidate</a></li>
+                                            <li><a class="dropdown-item" href="./form_employees_en.html">Post your CV</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown" id="job">
+                                        <a class="nav-link" href="#" data-bs-toggle="dropdown">Jobs</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="./search_employment_en.html">Search Job</a></li>
+                                            <li><a class="dropdown-item" href="./form_employment_en.html">Post Job</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item" id="signIn">
+                                        <a href="./login.html">Login</a>
+                                    </li>
+                                    <li class="nav-item flag">
+                                        <a class="lang" href="./index_tr.html">
+                                            <img src="./assets/images/tr-flag.png" alt="TR">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="container">
+                <div class="row header-hero-content">
+                    <div class="col">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Post your CV</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--====== HEADER PART ENDS ======-->
+
+    <!--====== FORM EMPLOYEE PART START ======-->
+    <section id="form-employees">
+        <div class="detail-header">
+            <div class="container">
+                <h4 class="font-weight-semi-bold">Create your own Profile.</h4>
+                <p class="mb-20 mt-20 lead">
+                    This will allow you to express more detailed preferences regarding your new jobs. You can choose the types of work and regions that interest you most.
+                    <br><br>
+                    We will keep you informed about the most suitable jobs for you.</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="form-content">
+                <form name="myform" id="myform" method="post" enctype="multipart/form-data" onsubmit="return submitDataEmployees()">
+                    <div class="form-group">
+                        <h5 class="mt-10 mb-20">Profile Picture</h5>
+                        <div class="profile-pic-wrapper">
+                            <div class="pic-holder">
+                                <!-- uploaded pic shown here -->
+                                <img id="profilePic" class="pic">
+                                <label for="newProfilePhoto" class="upload-file-block">
+                                    <div class="text-center">
+                                        <div class="mb-2">
+                                            <i class="lni lni-camera"></i>
+                                        </div>
+                                        <div class="text-uppercase">
+                                            Upload <br /> Profile Photo
+                                        </div>
+                                    </div>
+                                </label>
+                                <Input class="uploadProfileInput" type="file" name="newProfilePhoto" id="newProfilePhoto" accept="image/*">
+                            </div>
+                        </hr>
+                        <p class="text-info small">Note: Upload profile image by click profile picture box</p>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <input type="text" class="form-control" id="firstname" placeholder="First name" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <input type="text" class="form-control" id="lastname" placeholder="Last name" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="dateofbirth" placeholder="Date of birth" value="" required>
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroupPrepend"><i class="lni lni-calendar"></i></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-4 mb-3">
+                            <input type="text" class="form-control" id="address" placeholder="Address" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <input type="text" class="form-control" id="city" placeholder="City" required>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <input type="tel" class="form-control" id="postcode" placeholder="Postcode" pattern="[0-9]{5}" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <input type="email" class="form-control" id="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <input type="tel" class="form-control" id="phone" placeholder="Phone" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" maxlength="12" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12 mb-3">
+                            <input type="text" class="form-control" id="job-title" placeholder="Your job title as" required>
+                        </div>
+                    </div>
+                    <div id="educations" class="mt-20 mb-30">
+                        <h5 class="mt-10 mb-20">Educations</h5>
+                        <input type="hidden" name="countEducation" value="1" />
+                        <div class="input-group" id="fieldEducation">
+                            <div class="eduContent form-row" id="fieldEducation1" name="fieldEducation1">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" id="education-1" placeholder="Education" required>
+                                </div>
+                                <div class="col-md-5 mb-3">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="graduationdate-1" placeholder="Graduation Date" value="" required>
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroupPrepend"><i class="lni lni-calendar"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-1 mb-3">
+                                    <button class="buttonAddRemove btn btn-primary add-education" type="button">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="experiences" class="mt-20">
+                        <h5 class="mt-10 mb-20">Works Experience</h5>
+                        <input type="hidden" name="count" value="1" />
+                        <div class="input-group" id="fieldExperience">
+                            <div class="expContent form-row" id="fieldExperience1" name="fieldExperience1">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" id="experience-company-1" placeholder="Company" required>
+                                    <div class="input-group mt-10">
+                                        <input type="text" class="form-control" id="experience-startenddate-1" placeholder="Start - End date" value="" required>
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text" id="inputGroupPrepend"><i class="lni lni-calendar"></i></span>
+                                        </div>
+                                    </div>
+                                    <input type="text" class="form-control mt-10" id="experience-position-1" placeholder="Position as" required>
+                                </div>
+                                <div class="col-md-5 mb-3">
+                                    <textarea class="form-control" id="experience-description-1" rows="5" placeholder="Description your job.." required></textarea>
+                                </div>
+                                <div class="col-md-1 mb-3">
+                                    <button class="buttonAddRemove btn btn-primary add-more" type="button">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="skills" class="mt-20">
+                        <h5 class="mt-10 mb-20">Skills</h5>
+                        <input type="hidden" name="countSkill" value="1" />
+                        <div class="input-group" id="fieldSkill">
+                            <div class="skillContent form-row" id="fieldSkill1" name="fieldSkill1">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" id="skill-1" placeholder="Add skill" required>
+                                </div>
+                                <div class="col-md-5 mb-3">
+                                    <select class="form-control" id="skill-level-1">
+                                        <option value="0% - 30%">0% - 30%</option>
+                                        <option value="30% - 50%">30% - 50%</option>
+                                        <option value="50% - 70%">50% - 70%</option>
+                                        <option value="70% - 100%">70% - 100%</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-1 mb-3">
+                                    <button class="buttonAddRemove btn btn-primary add-skill" type="button">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="language-skills" class="mt-20 mb-30">
+                        <h5 class="mt-10 mb-20">Language Skills</h5>
+                        <input type="hidden" name="countLanguage" value="1" />
+                        <div class="input-group" id="fieldLanguage">
+                            <div class="langContent form-row" id="fieldLanguage1" name="fieldLanguage1">
+                                <div class="col-md-6 mb-3">
+                                    <input type="text" class="form-control" id="skill-language-1" placeholder="Add language" required>
+                                </div>
+                                <div class="col-md-5 mb-3">
+                                    <select class="form-control" id="language-level-1">
+                                        <option>Beginner</option>
+                                        <option>Intermediate</option>
+                                        <option>Advanced</option>
+                                        <option>Mastery</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-1 mb-3">
+                                    <button class="buttonAddRemove btn btn-primary add-language" type="button">+</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div id="upload-cv" class="form-group mt-20">
+                        <h5 class="mt-10 mb-20">Upload CV</h5>
+                        <div class="upload-file-content">
+                            <input type="file" id="file-cv" accept=".pdf, .docx" >
+                            <label class="actual-label main-btn" for="file-cv">Choose File</label>
+                            <span id="file-chosen">No file chosen</span>
+                        </div>
+                        <span class="small-label">Note: Maximum size allowed: 5MB. We accept PDF and Word files (docx).</span>
+                    </div>
+                    <div id="about" class="mt-20">
+                        <h5 class="mt-10 mb-20">About me</h5>
+                        <div class="form-row">
+                            <textarea id="about-me" class="form-control mb-10" rows="5" placeholder="Please describe about yourself..." required></textarea>
+                        </div>
+                    </div>
+                    <div id="sosmeds" class="mt-20">
+                        <h5 class="mt-10 mb-20">Social Media</h5>
+                        <input type="hidden" name="countSosmed" value="1" />
+                        <div class="input-group" id="fieldSosmed">
+                            <div class="sosmedContent form-row" id="fieldSosmed1" name="fieldSosmed1">
+                                <div class="col-md-6 mb-3">
+                                    <select class="form-control" id="sosmed-name-1">
+                                        <option>Facebook</option>
+                                        <option>Twitter</option>
+                                        <option>Instagram</option>
+                                        <option>Linkedin</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-5 mb-3">
+                                    <input type="url" class="form-control" id="sosmed-1" placeholder="Add URL" required>
+                                </div>
+                                <div class="col-md-1 mb-3">
+                                    <button class="buttonAddRemove btn btn-primary add-sosmed" type="button">+</button>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div id="termsCond" class="form-group mb-20 mt-40">
+                        <div class="form-check mt-10">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">
+                                Yes, I agree to terms and conditions
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <button class="main-btn" type="submit" form="myform">Submit Form</button>
+            </div>
+        </div>
+
+    </section>
+    <!--====== FORM EMPLOYEE PART END ======-->
+
+    <!--====== FOOTER PART START ======-->
+    <footer id="contact-us" class="footer-area mt-100">
+        <div class="container">
+            <div class="footer-widget">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-8">
+                        <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                            <p class="text">Lorem ipsum dolor sit amet consetetur sadipscing elitr, sederfs diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
+                            <ul class="social">
+                                <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
+                                <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
+                                <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
+                                <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-8">
+                        <div class="footer-contact mt-50 justify-content-md-between">
+                            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                                <div class="footer-title">
+                                    <h4 class="title">Contact Us</h4>
+                                </div>
+                                <ul class="contact link">
+                                    <li><i class="lni lni-map-marker"></i> Your Company Address </br> City / Province </li>
+                                    <li><i class="lni lni-phone"></i> +01 (234) 567 8901</li>
+                                    <li><i class="lni lni-printer"></i> +01 (234) 567 8901</li>
+                                    <li><i class="lni lni-envelope"></i> info@your.company</li>
+                                    <li><i class="lni lni-world"></i> www.yourweb.com</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-8">
+                        <div class="link-wrapper wow fadeIn mt-50 justify-content-md-between" data-wow-duration="1s" data-wow-delay="0.6s">
+                            <div class="footer-title">
+                                <h4 class="title">Resources</h4>
+                            </div>
+                            <ul class="link ">
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#home">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#frequently">Frequently</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#recently">Recently</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#feedback">Feedback</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#contact-us">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-8">
+                        <div class="link-wrapper wow fadeIn mt-50 justify-content-md-between" data-wow-duration="1s" data-wow-delay="0.4s">
+                            <div class="footer-title">
+                                <h4 class="title">Quick Link</h4>
+                            </div>
+                            <ul class="link">
+                                <li class="nav-item">
+                                    <a href="./search_employees_en.html">Search Candidates</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./search_employment_en.html">Search Jobs</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright d-sm-flex justify-content-between">
+                            <div class="copyright-content">
+                                <p class="text">© 2016 All Rights Reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--====== FOOTER PART ENDS ======-->
+
+    <!--====== feedback Modal START ======-->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+    </div>
+    <!--====== feedback Modal END ======-->
+
+    <!--====== intlTelInput js ======-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <!--====== Moment js ======-->
+    <script src="assets/js/moment.min.js"></script>
+    <!--====== Jquery js ======-->
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <!--====== Bootstrap js ======-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!--====== Date range picker JS ======-->
+    <script src="assets/js/daterangepicker.js"></script>
+    <!--====== Plugins js ======-->
+    <script src="assets/js/plugins.js"></script>
+    <!--====== Scrolling Nav js ======-->
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/scrolling-nav.js"></script>
+    <!--====== wow js ======-->
+    <script src="assets/js/wow.min.js"></script>
+    <!--====== Main js ======-->
+    <script src="assets/js/main.js"></script>
+    <!--====== Search Employee data JS ======-->
+    <script src="assets/js/page/form_employees.js"></script>
+    
+</body>
+</html>

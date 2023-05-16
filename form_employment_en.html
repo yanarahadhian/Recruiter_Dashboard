@@ -1,0 +1,365 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Resource Recruitment</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <!--====== Animate CSS ======-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="assets/css/LineIcons.css">
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!--====== Date range picker CSS ======-->
+    <link rel="stylesheet" href="assets/css/daterangepicker.css">
+    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="assets/css/default.css">
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!--====== flickity CSS ======-->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+</head>
+
+<body> 
+    <!--====== PRELOADER PART START ======-->
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== PRELOADER PART ENDS ======-->
+    
+    <!--====== HEADER PART START ======-->
+    <header class="header-area">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="./index.html">
+                                <img src="assets/images/logo-netflix.svg" alt="Logo">
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ml-auto">
+                                    <li class="nav-item active">
+                                        <a class="page-scroll" href="./index.html#home">Home</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="./index.html#frequently">Frequently</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="./index.html#recently">Recently</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="./index.html#feedback">Feedback</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="#contact-us">Contact Us</a>
+                                    </li>
+                                    <li class="nav-border"></li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" data-bs-toggle="dropdown">Candidates</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="./search_employees_en.html">Search Candidate</a></li>
+                                            <li><a class="dropdown-item" href="./form_employees_en.html">Post your CV</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link" href="#" data-bs-toggle="dropdown">Jobs</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="./search_employment_en.html">Search Job</a></li>
+                                            <li><a class="dropdown-item" href="./form_employment_en.html">Post Job</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item" id="signIn">
+                                        <a href="./login.html">Login</a>
+                                    </li>
+                                    <li class="nav-item flag">
+                                        <a class="lang" href="./index_tr.html">
+                                            <img src="./assets/images/tr-flag.png" alt="TR">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="search-employment">
+            <div class="container">
+                <div class="row header-hero-content">
+                    <div class="col">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="./index.html">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Post Job</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--====== HEADER PART ENDS ======-->
+
+    <!--====== FORM EMPLOYMENT PART START ======-->
+    <section id="form-employment">
+        <div class="detail-header">
+            <div class="container">
+                <h4 class="font-weight-semi-bold">Create job post</h4>
+                <p class="mb-20 mt-20 lead">
+                    Use the form below to let us know of your hiring needs. We discuss all details at the face-to-face meeting. Depending on the possibilities, we arrange an in-person meeting or using on-line tools.
+                    <br><br>
+                    Once we get the basic information about your needs, we can already prepare the best solution for you.</p>
+            </div>
+        </div>
+        <div class="container">
+            <div class="form-content">
+                <form name="jobform" id="jobform" enctype="multipart/form-data" onsubmit="return submitDataEmployment()">
+                    <div id="company" class="mt-20">
+                        <h5 class="mt-10 mb-20">Company Information</h5>
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <input type="text" class="form-control" id="company-name" placeholder="Company name" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <input type="text" class="form-control" id="company-address" placeholder="Address" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <input type="text" class="form-control" id="company-city" placeholder="City" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="contact" class="mt-20">
+                        <h5 class="mt-10 mb-20">Contact Person</h5>
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <input type="text" class="form-control" id="contact-name" placeholder="Name" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <input type="email" class="form-control" id="contact-email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <input type="tel" class="form-control" id="contact-phone" placeholder="Phone" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" maxlength="12" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="job-requirement" class="mt-20">
+                        <h5 class="mt-10 mb-20">Job Description</h5>
+                        <div class="form-row">
+                            <div class="col-md-4 mb-3">
+                                <input type="text" class="form-control" id="job-title" placeholder="Type of work / position" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <input type="tel" class="form-control" id="job-location" placeholder="Work location" required>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <select id="job-status" class="form-control">
+                                    <option value="Full time">Full time</option>
+                                    <option value="Part time">Part time</option>
+                                    <option value="Work abroad">Work abroad</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div id="requirements" class="mt-20">
+                            <h6 class="mt-10 mb-20">Requirements</h6>
+                            <input type="hidden" name="countRequired" value="1" />
+                            <div class="form-row" id="fieldRequired">
+                                <div class="requiredContent col-md-12" id="fieldRequired1">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control input-field" id="required-1" placeholder="Add Required" required>
+                                        <button class="addRemoveField btn btn-primary add-required" type="button">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="preferreds" class="mt-20">
+                            <h6 class="mt-10 mb-20">Preferreds</h6>
+                            <input type="hidden" name="countPreferred" value="1" />
+                            <div class="form-row" id="fieldPreferred">
+                                <div class="preferredContent col-md-12" id="fieldPreferred1">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control input-field" id="preferred-1" placeholder="Add Preferred" required>
+                                        <button class="addRemoveField btn btn-primary add-preferred" type="button">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="skills" class="mt-20">
+                            <h6 class="mt-10 mb-20">Skills</h6>
+                            <input type="hidden" name="countSkill" value="1" />
+                            <div class="form-row" id="fieldSkill">
+                                <div class="skillContent" id="fieldSkill1">
+                                    <div class="input-group mt-3 col-md-3">
+                                        <input type="text" class="form-control input-field" id="skill-1" placeholder="Add Skill" required>
+                                        <button class="addRemoveField btn btn-primary add-skill" type="button">+</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="description" class="mt-20">
+                            <h6 class="mt-10 mb-20">Description</h6>
+                            <div class="form-row">
+                                <textarea id="job-description" class="form-control mb-10" rows="5" placeholder="Please describe about jobdesk..." required></textarea>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div id="termsCond" class="form-group mb-20 mt-40">
+                        <div class="form-check mt-10">
+                            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                            <label class="form-check-label" for="invalidCheck">
+                                Yes, I agree to terms and conditions
+                            </label>
+                        </div>
+                    </div>
+                </form>
+                <button class="main-btn" type="submit" form="jobform">Submit Form</button>
+            </div>
+        </div>
+    </section>
+    <!--====== FORM EMPLOYMENT PART END ======-->
+
+    <!--====== FOOTER PART START ======-->
+    <footer id="contact-us" class="footer-area mt-100">
+        <div class="container">
+            <div class="footer-widget">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-8">
+                        <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                            <p class="text">Lorem ipsum dolor sit amet consetetur sadipscing elitr, sederfs diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
+                            <ul class="social">
+                                <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
+                                <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
+                                <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
+                                <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-8">
+                        <div class="footer-contact mt-50 justify-content-md-between">
+                            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                                <div class="footer-title">
+                                    <h4 class="title">Contact Us</h4>
+                                </div>
+                                <ul class="contact link">
+                                    <li><i class="lni lni-map-marker"></i> Your Company Address </br> City / Province </li>
+                                    <li><i class="lni lni-phone"></i> +01 (234) 567 8901</li>
+                                    <li><i class="lni lni-printer"></i> +01 (234) 567 8901</li>
+                                    <li><i class="lni lni-envelope"></i> info@your.company</li>
+                                    <li><i class="lni lni-world"></i> www.yourweb.com</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-8">
+                        <div class="link-wrapper wow fadeIn mt-50 justify-content-md-between" data-wow-duration="1s" data-wow-delay="0.6s">
+                            <div class="footer-title">
+                                <h4 class="title">Resources</h4>
+                            </div>
+                            <ul class="link ">
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#home">Home</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#frequently">Frequently</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#recently">Recently</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#feedback">Feedback</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#contact-us">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-8">
+                        <div class="link-wrapper wow fadeIn mt-50 justify-content-md-between" data-wow-duration="1s" data-wow-delay="0.4s">
+                            <div class="footer-title">
+                                <h4 class="title">Quick Link</h4>
+                            </div>
+                            <ul class="link">
+                                <li class="nav-item">
+                                    <a href="./search_employees_en.html">Search Candidates</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./search_employment_en.html">Search Jobs</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright d-sm-flex justify-content-between">
+                            <div class="copyright-content">
+                                <p class="text">© 2016 All Rights Reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--====== FOOTER PART ENDS ======-->
+
+    <!--====== feedback Modal START ======-->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+    </div>
+    <!--====== feedback Modal END ======-->
+
+    <!--====== Moment js ======-->
+    <script src="assets/js/moment.min.js"></script>
+    <!--====== Jquery js ======-->
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <!--====== Bootstrap js ======-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!--====== Date range picker JS ======-->
+    <script src="assets/js/daterangepicker.js"></script>
+    <!--====== Plugins js ======-->
+    <script src="assets/js/plugins.js"></script>
+    <!--====== Scrolling Nav js ======-->
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/scrolling-nav.js"></script>
+    <!--====== wow js ======-->
+    <script src="assets/js/wow.min.js"></script>
+    <!--====== Main js ======-->
+    <script src="assets/js/main.js"></script>
+    <!--====== Search Employement data JS ======-->
+    <script src="assets/js/page/form_employment.js"></script>
+    
+</body>
+
+</html>

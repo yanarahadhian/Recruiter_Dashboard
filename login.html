@@ -1,0 +1,152 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Resource Recruitment</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <!--====== Animate CSS ======-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!--====== Font Awesome CSS ======-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="assets/css/default.css">
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body> 
+    <!--====== PRELOADER PART START ======-->
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== PRELOADER PART ENDS ======-->
+
+    <!--====== LOGIN FORM START ======-->
+    <div id="login-form" class="header-hero bg_cover" style="background-image: url(assets/images/banner-bg.jpg); height: 500px;">
+        <div class="login-container">
+            <div id="logreg-forms">
+                <form class="form-signin" onsubmit="return signIn()">
+                    <span id="message" class="mb-10" style="text-align: center;display: none;"></span>
+                    <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign in</h1>
+                    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" autofocus="">
+                    <input type="password" id="inputPassword" class="form-control mb-3" placeholder="Password" required="">
+                    <button type="submit" class="main-btn"><i class="fas fa-sign-in-alt"></i> Sign in</button>
+                    
+                    <a href="#" id="forgot_pswd">Forgot password?</a>
+                    <hr>
+                    <button class="red-main-btn" type="button" id="btn-signup-employe"><i class="fas fa-user-plus"></i> Sign Up as Job Seeker</button>
+                    <button class="red-main-btn mt-20" type="button" id="btn-signup-company"><i class="fas fa-user-plus"></i> Sign Up as Company</button>
+                    <a href="./index.html"><i class="fas fa-angle-left"></i> Back to page</a>
+                </form>
+        
+                <form action="/reset/password/" class="form-reset" onsubmit="return resetPassword()">
+                    <span id="messageReset" class="mb-10" style="text-align: center;display: none;"></span>
+                    <input type="email" id="resetEmail" class="form-control" placeholder="Email address" required="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" autofocus="">
+                    <button class="main-btn" type="submit">Reset Password</button>
+                    <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Back</a>
+                </form>
+
+                <form class="form-signup-employe" onsubmit="return signUpEmploye()" oninput='confirmPasswordEmploye.setCustomValidity(confirmPasswordEmploye.value != passwordEmploye.value ? "Passwords do not match." : "")'> 
+                    <span id="messageSignupEmploye" class="mb-10" style="text-align: center;display: none;"></span>
+                    <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign Up as Job Seeker</h1>
+                    <input type="text" id="firstname-employe" class="form-control" placeholder="Name" required="" autofocus="">
+                    <input type="text" id="lastname-employe" class="form-control" placeholder="Surname" required="" autofocus="">
+                    <input type="email" id="email-employe" class="form-control" placeholder="E-mail" required autofocus="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                    <input type="tel" id="phone-employe" class="form-control" placeholder="Phone" required autofocus="" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" maxlength="12">
+                    <input type="password" id="passwordEmploye" class="form-control" name="passwordEmploye" placeholder="Password" required autofocus="">
+                    <input type="password" id="confirmPasswordEmploye" class="form-control" name="confirmPasswordEmploye" placeholder="Repeat Password" required autofocus="">
+                    
+                    <div class="form-check mt-10">
+                        <input class="form-check-input" type="checkbox" value="" id="subscribe-email-employe">
+                        <label class="form-check-label" for="subscribe-email">
+                            I would like to get news notifications by e-mail.
+                        </label>
+                    </div>
+                    <div class="form-check mt-10">
+                        <input class="form-check-input" type="checkbox" value="" id="subscribe-sms-employe">
+                        <label class="form-check-label" for="subscribe-sms">
+                            I would like to get news notifications by SMS.
+                        </label>
+                    </div>
+                    <div class="form-check mt-10">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                            Yes, I agree to terms and conditions
+                        </label>
+                    </div>
+                    <button type="submit" class="main-btn"><i class="fas fa-user-plus"></i> Sign Up</button>
+                    <a href="#" id="cancel_signup-employe"><i class="fas fa-angle-left"></i> Back</a>
+                </form>
+
+                <form class="form-signup-company" onsubmit="return signUpCompany()" oninput='confirmPasswordCompany.setCustomValidity(confirmPasswordCompany.value != passwordCompany.value ? "Passwords do not match." : "")'> 
+                    <span id="messageSignupCompany" class="mb-10" style="text-align: center;display: none;"></span>
+                    <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Sign Up as Company</h1>
+                    <input type="text" id="company-name" class="form-control" placeholder="Company Name" required="" autofocus="">
+                    <input type="text" id="company-address" class="form-control" placeholder="Company Address" required="" autofocus="">
+                    <input type="text" id="company-city" class="form-control" placeholder="Company City" required="" autofocus="">
+                    <input type="text" id="company-web" class="form-control" placeholder="Company Website" required="" autofocus="">
+                    <input type="text" id="contact-name" class="form-control" placeholder="Contact Name" required="" autofocus="">
+                    <input type="email" id="contact-email" class="form-control" placeholder="Contact Email" required autofocus="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                    <input type="tel" id="contact-phone" class="form-control" placeholder="Contact Phone" required autofocus="" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" maxlength="12">
+                    <input type="password" id="passwordCompany" class="form-control" name="passwordCompany" placeholder="Password" required autofocus="">
+                    <input type="password" id="confirmPasswordCompany" class="form-control" name="confirmPasswordCompany" placeholder="Repeat Password" required autofocus="">
+                    
+                    <div class="form-check mt-30">
+                        <input class="form-check-input" type="checkbox" value="" id="subscribe-email-company">
+                        <label class="form-check-label" for="subscribe-email">
+                            I would like to get news notifications by e-mail.
+                        </label>
+                    </div>
+                    <div class="form-check mt-10">
+                        <input class="form-check-input" type="checkbox" value="" id="subscribe-sms-company">
+                        <label class="form-check-label" for="subscribe-sms">
+                            I would like to get news notifications by SMS.
+                        </label>
+                    </div>
+                    <div class="form-check mt-10">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                            Yes, I agree to terms and conditions
+                        </label>
+                    </div>
+                    <button type="submit" class="main-btn"><i class="fas fa-user-plus"></i> Sign Up</button>
+                    <a href="#" id="cancel_signup-company"><i class="fas fa-angle-left"></i> Back</a>
+                </form>
+                    
+            </div>
+        </div>
+    </div>
+    
+    <!--====== LOGIN FORM END ======-->
+
+    <!--====== Jquery js ======-->
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <!--====== Bootstrap js ======-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!--====== wow js ======-->
+    <script src="assets/js/wow.min.js"></script>
+    <!--====== Main js ======-->
+    <script src="assets/js/main.js"></script>
+    <!--====== Search Employee data JS ======-->
+    <script src="assets/js/page/login.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,356 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Resource Recruitment</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <!--====== Animate CSS ======-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!--====== Line Icons CSS ======-->
+    <link rel="stylesheet" href="assets/css/LineIcons.css">
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!--====== Date range picker CSS ======-->
+    <link rel="stylesheet" href="assets/css/daterangepicker.css">
+    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="assets/css/default.css">
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body> 
+    <!--====== PRELOADER PART START ======-->
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== PRELOADER PART ENDS ======-->
+    
+    <!--====== HEADER PART START ======-->
+    <header class="header-area">
+        <div class="navbar-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav class="navbar navbar-expand-lg">
+                            <a class="navbar-brand" href="./index_tr.html">
+                                <img src="assets/images/logo-netflix.svg" alt="Logo">
+                            </a>
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                                <span class="toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                                <ul id="nav" class="navbar-nav ml-auto">
+                                    <li class="nav-item active">
+                                        <a class="page-scroll" href="./index_tr.html#home">Anasayfa</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="./index_tr.html#frequently">Sıkça</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="./index_tr.html#recently">Yeni</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="./index_tr.html#feedback">Geribesleme</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="page-scroll" href="./index_tr.html#contact-us">İletişim</a>
+                                    </li>
+                                    <li class="nav-border"></li>
+                                    <li class="nav-item dropdown" id="candidate">
+                                        <a class="nav-link" href="#" data-bs-toggle="dropdown">Adaylar</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="./search_employees_tr.html">Adayı Ara</a></li>
+                                            <li><a class="dropdown-item" href="./form_employees_tr.html">CV'nizi gönderin</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item dropdown" id="job">
+                                        <a class="nav-link" href="#" data-bs-toggle="dropdown">İş</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="./search_employment_tr.html">İş Ara</a></li>
+                                            <li><a class="dropdown-item" href="./form_employment_tr.html">Iş ilanı</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item" id="signIn">
+                                        <a href="./login_tr.html">Üye Girişi</a>
+                                    </li>
+                                    <li class="nav-item flag">
+                                        <a class="lang" href="./index.html">
+                                            <img src="./assets/images/us-flag.png" alt="TR">
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="search-employee">
+            <div class="container">
+                <div class="row header-hero-content">
+                    <div class="col">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="./index_tr.html">Anasayfa</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Adayı Ara</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--====== HEADER PART ENDS ======-->
+    
+    <!--====== SEARCH INPUT PART START ======-->
+    <section id="search" class="search-area">
+        <div class="container">
+            <form>
+                <div class="row justify-content-center">
+                    <div class="input-group search-area-form">
+                        <div class="search-field">
+                            <input id="intro-keywords" name="search_keywords" type="text" placeholder="Başlık veya Anahtar Kelimeler" class="form-control" autocomplete="off" onkeypress="handleKeyPress(event)">
+                        </div>
+                        <div class="search-field">
+                            <input id="search-location" name="search_location" type="text" placeholder="Şehir, İl veya Bölge" class="form-control" autocomplete="off" onkeypress="handleKeyPress(event)">
+                            <i class="lni lni-map-marker"></i>
+                        </div>
+                        <div class="search-button">
+                            <div class="input-group-append">
+                                <a class="main-btn" href="#" role="button" onclick="clickSearch()">
+                                    <span>Arama</span>                                    
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="btn-showHideDetail" class="mt-20 mb-20">
+                    <a onclick="showHideDetail()">Daha Fazla Ayrıntı Ara <i class="lni lni-chevron-down"></i></a>
+                </div>
+                <div id="detailSearch" style="display: none;">
+                    <div class="row justify-content-center">
+                        <div class="form-row mb-3 detailSearch-area-form">
+                            <div class="col-md-6 mr-10 detailSearch-field">
+                                <input type="text" class="form-control" id="last-education" placeholder="Eğitim / Üniversite" onkeypress="handleKeyPress(event)">
+                            </div>
+                            <div class="col-md-6 detailSearch-field">
+                                <input type="text" class="form-control" id="last-company" placeholder="Son Şirket" onkeypress="handleKeyPress(event)">
+                            </div>
+                        </div>
+                        <div class="form-row detailSearch-area-form">
+                            <div class="col-md-6 mr-10 detailSearch-field">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="dateBirth" placeholder="Doğum tarihi - ile" value="" onkeypress="handleKeyPress(event)">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text" id="inputGroupPrepend"><i class="lni lni-calendar"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 detailSearch-field">
+                                <input type="text" class="form-control" id="skill-language" placeholder="Beceri dili" onkeypress="handleKeyPress(event)">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!--====== SEARCH INPUT PART END ======-->
+
+    <!--====== Adsense PART START ======-->
+    <div id="adsWrap" class="wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="contentWrapper">
+            <button type="button" class="wrpClose" onclick="this.parentNode.parentNode.style.display = 'none';">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            adsense section
+        </div>
+    </div>
+    <!--====== Adsense PART ENDS ======-->
+
+    <!--====== EMPLOYEES RESULT PART START ======-->
+    <section id="employees-result" class="employees-result-area">
+        <div class="container">
+            <div class="employee-result-data"></div>
+            <div class="employee-pagination pt-50 pb-50">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination justify-content-center">
+                        <li id="btn_prev" class="page-item"></li>
+                        <li class="page">
+                            sayfa: <span id="pageNum"></span>
+                        </li>
+                        <li id="btn_next" class="page-item"></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+    <!--====== EMPLOYEES RESULT PART END ======-->
+
+    <!--====== Adsense PART START ======-->
+    <div id="adsWrap" class="wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="contentWrapper">
+            <button type="button" class="wrpClose" onclick="this.parentNode.parentNode.style.display = 'none';">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            adsense section
+        </div>
+    </div>
+    <!--====== Adsense PART ENDS ======-->
+
+    <!--====== sticky right Adsense PART START ======-->
+    <div id="stickyRightAdsWrap" class="wow fadeInLeftBig" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="stickyRightcontentWrapper">
+            <button type="button" class="wrpClose" onclick="this.parentNode.parentNode.style.display = 'none';">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            adsense section
+        </div>
+    </div>
+    <!--====== sticky right Adsense PART ENDS ======-->
+
+    <!--====== sticky bottom Adsense PART START ======-->
+    <div id="stickyBottomAdsWrap" class="wow fadeInUpBig" data-wow-duration="1s" data-wow-delay="0.5s">
+        <div class="stickyBottomcontentWrapper">
+            <button type="button" class="wrpClose" onclick="this.parentNode.parentNode.style.display = 'none';">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            adsense section
+        </div>
+    </div>
+    <!--====== sticky bottom Adsense PART ENDS ======-->
+
+    <!--====== FOOTER PART START ======-->
+    <footer id="contact-us" class="footer-area mt-100">
+        <div class="container">
+            <div class="footer-widget">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-8">
+                        <div class="footer-about mt-50 wow fadeIn" data-wow-duration="1s" data-wow-delay="0.2s">
+                            <p class="text">Lorem ipsum dolor sit amet consetetur sadipscing elitr, sederfs diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam.</p>
+                            <ul class="social">
+                                <li><a href="#"><i class="lni-facebook-filled"></i></a></li>
+                                <li><a href="#"><i class="lni-twitter-filled"></i></a></li>
+                                <li><a href="#"><i class="lni-instagram-filled"></i></a></li>
+                                <li><a href="#"><i class="lni-linkedin-original"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-8">
+                        <div class="footer-contact mt-50 justify-content-md-between">
+                            <div class="link-wrapper wow fadeIn" data-wow-duration="1s" data-wow-delay="0.6s">
+                                <div class="footer-title">
+                                    <h4 class="title">İletişim</h4>
+                                </div>
+                                <ul class="contact link">
+                                    <li><i class="lni lni-map-marker"></i> Your Company Address </br> City / Province </li>
+                                    <li><i class="lni lni-phone"></i> +01 (234) 567 8901</li>
+                                    <li><i class="lni lni-printer"></i> +01 (234) 567 8901</li>
+                                    <li><i class="lni lni-envelope"></i> info@your.company</li>
+                                    <li><i class="lni lni-world"></i> www.yourweb.com</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-8">
+                        <div class="link-wrapper wow fadeIn mt-50 justify-content-md-between" data-wow-duration="1s" data-wow-delay="0.6s">
+                            <div class="footer-title">
+                                <h4 class="title">Kaynaklar</h4>
+                            </div>
+                            <ul class="link">
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#home">Anasayfa</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#frequently">Sıkça</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#recently">Yeni</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#feedback">Geribesleme</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="page-scroll" href="#contact-us">İletişim</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-8">
+                        <div class="link-wrapper wow fadeIn mt-50 justify-content-md-between" data-wow-duration="1s" data-wow-delay="0.4s">
+                            <div class="footer-title">
+                                <h4 class="title">Hızlı link</h4>
+                            </div>
+                            <ul class="link">
+                                <li class="nav-item">
+                                    <a href="./search_employees_tr.html">Adayı Ara</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="./search_employment_tr.html">İş Ara</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="copyright d-sm-flex justify-content-between">
+                            <div class="copyright-content">
+                                <p class="text">© 2016 All Rights Reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--====== FOOTER PART ENDS ======-->
+
+    <!--====== feedback Modal START ======-->
+    <div class="modal fade" id="feedbackModal" tabindex="-1" role="dialog" aria-labelledby="feedbackModalLabel" aria-hidden="true">
+    </div>
+    <!--====== feedback Modal END ======-->
+
+    <!--====== Jquery js ======-->
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <!--====== Moment js ======-->
+    <script src="assets/js/moment.min.js"></script>
+    <!--====== Bootstrap js ======-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!--====== Date range picker JS ======-->
+    <script src="assets/js/daterangepicker.js"></script>
+    <!--====== Plugins js ======-->
+    <script src="assets/js/plugins.js"></script>
+    <!--====== Scrolling Nav js ======-->
+    <script src="assets/js/jquery.easing.min.js"></script>
+    <script src="assets/js/scrolling-nav.js"></script>
+    <!--====== wow js ======-->
+    <script src="assets/js/wow.min.js"></script>
+    <!--====== Main js ======-->
+    <script src="assets/js/main.js"></script>
+    <!--====== Search Employee data JS ======-->
+    <script src="assets/js/page/search_employees.js"></script>
+    
+</body>
+
+</html>

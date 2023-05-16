@@ -1,0 +1,123 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Resource Recruitment</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/png">
+    <!--====== Animate CSS ======-->
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <!--====== Font Awesome CSS ======-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    <!--====== Bootstrap CSS ======-->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!--====== Default CSS ======-->
+    <link rel="stylesheet" href="assets/css/default.css">
+    <!--====== Style CSS ======-->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body> 
+    <!--====== PRELOADER PART START ======-->
+    <div class="preloader">
+        <div class="loader">
+            <div class="ytp-spinner">
+                <div class="ytp-spinner-container">
+                    <div class="ytp-spinner-rotator">
+                        <div class="ytp-spinner-left">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                        <div class="ytp-spinner-right">
+                            <div class="ytp-spinner-circle"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--====== PRELOADER PART ENDS ======-->
+
+    <!--====== LOGIN FORM START ======-->
+    <div id="login-form" class="header-hero bg_cover" style="background-image: url(assets/images/banner-bg.jpg); height: 500px;">
+        <div class="login-container">
+            <div id="logreg-forms">
+                <form class="form-signin" onsubmit="return signIn()">
+                    <span id="message" class="mb-10" style="text-align: center;display: none;"></span>
+                    <h1 class="h3 mb-3 font-weight-normal" style="text-align: center"> Üye Girişi</h1>
+                    <input type="email" id="inputEmail" class="form-control" placeholder="E-posta" required="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" autofocus="">
+                    <input type="password" id="inputPassword" class="form-control mb-3" placeholder="Şifre" required="">
+                    <button type="submit" class="main-btn"><i class="fas fa-sign-in-alt"></i> Giriş Yap</button>
+                    
+                    <a href="#" id="forgot_pswd">Şifremi Unuttum?</a>
+                    <hr>
+                    <button class="red-main-btn mb-20" type="button" id="btn-signup"><i class="fas fa-user-plus"></i> Üye Ol</button>
+                    <a href="./index_tr.html"><i class="fas fa-angle-left"></i> Sayfaya geri dön</a>
+                </form>
+        
+                <form action="/reset/password/" class="form-reset" onsubmit="return resetPassword()">
+                    <span id="messageReset" class="mb-10" style="text-align: center;display: none;"></span>
+                    <input type="email" id="resetEmail" class="form-control" placeholder="E-posta" required="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" autofocus="">
+                    <button class="main-btn" type="submit">Gönder</button>
+                    <a href="#" id="cancel_reset"><i class="fas fa-angle-left"></i> Geri</a>
+                </form>
+
+                <form class="form-signup" onsubmit="return signUp()" oninput='confirmPassword.setCustomValidity(confirmPassword.value != password.value ? "Parolalar uyuşmuyor." : "")'> 
+                    <span id="messageSignup" class="mb-10" style="text-align: center;display: none;"></span>
+                    <h1 class="h3 mb-3 font-weight-normal" style="text-align: center">Üye Ol</h1>
+                    <input type="text" id="firstname" class="form-control" placeholder="Adınız" required="" autofocus="">
+                    <input type="text" id="lastname" class="form-control" placeholder="Soyadınız" required="" autofocus="">
+                    <input type="email" id="email" class="form-control" placeholder="E-posta Adresiniz" required autofocus="" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                    <input type="tel" id="phone" class="form-control" placeholder="Cep Telefonunuz" required autofocus="" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" maxlength="12">
+                    <input type="password" id="password" class="form-control" name="password" placeholder="Şifre" required autofocus="">
+                    <input type="password" id="confirmPassword" class="form-control" name="confirmPassword" placeholder="Şifreyi tekrar girin" required autofocus="">
+                    <div class="input-group mb-30 sign-up-role">
+                        <label class="mr-10" for="user-role">Kayıt Ol :</label>
+                        <select class="form-control" id="user-role" required>
+                            <option value="İş Arayan">İş Arayan</option>
+                            <option value="Şirket">Şirket</option>
+                        </select>
+                    </div>
+                    <div class="form-check mt-10">
+                        <input class="form-check-input" type="checkbox" value="" id="subscribe-email">
+                        <label class="form-check-label" for="subscribe-email">
+                            Haber bildirimlerini e-posta ile almak istiyorum.
+                        </label>
+                    </div>
+                    <div class="form-check mt-10">
+                        <input class="form-check-input" type="checkbox" value="" id="subscribe-sms">
+                        <label class="form-check-label" for="subscribe-sms">
+                            Haber bildirimlerini SMS ile almak istiyorum.
+                        </label>
+                    </div>
+                    <div class="form-check mt-10">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                            Evet, şartlar ve koşulları kabul ediyorum
+                        </label>
+                    </div>
+                    <button type="submit" class="main-btn"><i class="fas fa-user-plus"></i> Üye Ol</button>
+                    <a href="#" id="cancel_signup"><i class="fas fa-angle-left"></i> Geri</a>
+                </form>
+                <br>
+                    
+            </div>
+        </div>
+    </div>
+    
+    <!--====== LOGIN FORM END ======-->
+
+    <!--====== Jquery js ======-->
+    <script src="assets/js/jquery-1.12.4.min.js"></script>
+    <!--====== Bootstrap js ======-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!--====== wow js ======-->
+    <script src="assets/js/wow.min.js"></script>
+    <!--====== Main js ======-->
+    <script src="assets/js/main.js"></script>
+    <!--====== Search Employee data JS ======-->
+    <script src="assets/js/page/login.js"></script>
+</body>
+
+</html>
